@@ -3,626 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GL Code - Soluciones Tecnológicas y Desarrollo Web</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            overflow-x: hidden;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header */
-        header {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            color: white;
-            padding: 1rem 0;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            height: 50px;
-            display: flex;
-            align-items: center;
-        }
-
-        .logo img {
-            height: 100%;
-            width: auto;
-            transition: transform 0.3s ease;
-        }
-
-        .logo img:hover {
-            transform: scale(1.05);
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .nav-links a:hover {
-            transform: translateY(-2px);
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background: linear-gradient(45deg, #0088ff, #00d4aa);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            color: white;
-            padding: 120px 0 80px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23ffffff08" points="0,1000 1000,0 1000,1000"/></svg>');
-            animation: float 20s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateX(0) rotate(0deg); }
-            50% { transform: translateX(20px) rotate(2deg); }
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            opacity: 0;
-            animation: slideUp 1s ease forwards 0.5s;
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0;
-            animation: slideUp 1s ease forwards 0.7s;
-        }
-
-        @keyframes slideUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .hero h1, .hero p {
-            transform: translateY(30px);
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(45deg, #0088ff, #00d4aa);
-            color: white;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(0,136,255,0.3);
-            opacity: 0;
-            animation: slideUp 1s ease forwards 0.9s;
-            transform: translateY(30px);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0,136,255,0.4);
-            background: linear-gradient(45deg, #0099ff, #00e5bb);
-        }
-
-        /* Services Section */
-        .services {
-            padding: 80px 0;
-            background: #f8f9fa;
-        }
-
-        .services h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #333;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            border: 1px solid #e9ecef;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(45deg, #0088ff, #00d4aa);
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-
-        .service-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, #0088ff, #00d4aa);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #333;
-        }
-
-        /* About Section */
-        .about {
-            padding: 80px 0;
-            background: white;
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .about-text h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: #333;
-        }
-
-        .about-text p {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            color: #666;
-        }
-
-        .about-image {
-            text-align: center;
-        }
-
-        .tech-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .tech-item {
-            background: #f8f9fa;
-            padding: 1rem;
-            border-radius: 10px;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-
-        .tech-item:hover {
-            border-color: #0088ff;
-            transform: scale(1.05);
-        }
-
-        /* Contact Section */
-        .contact {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            color: white;
-            padding: 80px 0;
-        }
-
-        .contact h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-        }
-
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-        }
-
-        .contact-info h3 {
-            margin-bottom: 1rem;
-        }
-
-        .contact-item {
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .contact-form {
-            background: rgba(255,255,255,0.1);
-            padding: 2rem;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: none;
-            border-radius: 8px;
-            background: rgba(255,255,255,0.9);
-            color: #333;
-        }
-
-        .submit-btn {
-            background: linear-gradient(45deg, #0088ff, #00d4aa);
-            color: white;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0,136,255,0.3);
-            background: linear-gradient(45deg, #0099ff, #00e5bb);
-        }
-
-        /* Footer */
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav-links {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .about-content,
-            .contact-content {
-                grid-template-columns: 1fr;
-            }
-
-            .tech-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        /* Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 1s ease forwards;
-        }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-    </style>
+    <title>GL Mind | Tecnología que conecta. Estrategia que escala.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <nav class="container">
-            <div class="logo">
-                <img src="./Glcode.jpg" alt="GL Code Logo">
-            </div>
-            <ul class="nav-links">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
+
+    <canvas id="neural-canvas"></canvas>
+
+    <header id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <img src="assets/images/logo.png" alt="GL Mind" style="height: 50px;">
+            </a>
+            <nav class="nav-links">
+                <a href="#servicios">Servicios</a>
+                <a href="#método">El Método</a>
+                <a href="#contacto" class="btn btn-primary btn-sm">Agendar Demo</a>
+            </nav>
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+        </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="inicio">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Soluciones Tecnológicas e Innovadoras</h1>
-                <p>Transformamos tus ideas en realidad digital con desarrollo web, software a medida y soluciones tecnológicas de vanguardia</p>
-                <a href="#contacto" class="cta-button">Comenzar Proyecto</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services" id="servicios">
-        <div class="container">
-            <h2>Nuestros Servicios</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">💻</div>
-                    <h3>Desarrollo Web</h3>
-                    <p>Creamos sitios web modernos, responsivos y optimizados para SEO. Desde landing pages hasta aplicaciones web complejas con las últimas tecnologías.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">📱</div>
-                    <h3>Aplicaciones Móviles</h3>
-                    <p>Desarrollamos aplicaciones nativas e híbridas para iOS y Android que ofrecen una experiencia de usuario excepcional.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">⚙️</div>
-                    <h3>Software a Medida</h3>
-                    <p>Soluciones de software personalizadas que se adaptan perfectamente a las necesidades específicas de tu negocio.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">☁️</div>
-                    <h3>Soluciones en la Nube</h3>
-                    <p>Migramos y optimizamos tu infraestructura en la nube para mayor escalabilidad, seguridad y eficiencia.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🛡️</div>
-                    <h3>Ciberseguridad</h3>
-                    <p>Protegemos tu negocio con auditorías de seguridad, implementación de protocolos y monitoreo continuo.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">📊</div>
-                    <h3>Consultoría IT</h3>
-                    <p>Asesoramos en la transformación digital de tu empresa con estrategias tecnológicas personalizadas.</p>
+    <main>
+        <section id="hero">
+            <div class="container hero-content">
+                <span class="badge-tech">Ingeniería de Negocios Digitales</span>
+                <h1>
+                    No más sistemas aislados.<br>
+                    Somos tu <span class="gradient-text">Cerebro Digital.</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Desarrollamos el ecosistema que tu empresa necesita: APIs que conectan, IA que vende 24/7 y estrategias que escalan tu crecimiento.
+                </p>
+                <div class="cta-group">
+                    <a href="#contacto" class="btn btn-primary btn-glow">Iniciar Transformación <i class="fas fa-arrow-right"></i></a>
+                    <a href="#servicios" class="btn btn-secondary">Explorar Ecosistema</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Section -->
-    <section class="about" id="nosotros">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>¿Por qué elegir GL Code?</h2>
-                    <p>En GL Code somos un equipo apasionado por la tecnología, dedicado a crear soluciones digitales que impulsen el crecimiento de nuestros clientes. Con años de experiencia en el sector, combinamos creatividad, técnica y estrategia.</p>
-                    <p>Nuestro enfoque se centra en entender profundamente las necesidades de cada cliente para ofrecer soluciones innovadoras y escalables que generen valor real para su negocio.</p>
-                    <p>Trabajamos con metodologías ágiles, asegurando transparencia, comunicación constante y entregas de alta calidad en cada proyecto.</p>
+        <section id="servicios">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>El Ecosistema <span class="gradient-text">GL Mind</span></h2>
+                    <p>Tres pilares tecnológicos diseñados para trabajar como una sola mente.</p>
                 </div>
-                <div class="about-image">
-                    <h3>Tecnologías que Dominamos</h3>
-                    <div class="tech-grid">
-                        <div class="tech-item">
-                            <strong>Frontend</strong><br>
-                            React, Vue, Angular
+
+                <div class="services-grid">
+                    <div class="glass-card service-card">
+                        <div class="icon-box icon-cyan">
+                            <i class="fas fa-network-wired"></i>
                         </div>
-                        <div class="tech-item">
-                            <strong>Backend</strong><br>
-                            Node.js, Python, PHP
+                        <h3>Infraestructura & APIs</h3>
+                        <p>Desarrollo web de alto rendimiento e integraciones fluidas. Hacemos que tu software hable el mismo idioma.</p>
+                        <ul class="tech-tags">
+                            <li>JavaScript</li>
+                            <li>Node.js</li>
+                            <li>React</li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-card service-card featured">
+                        <div class="icon-box icon-purple">
+                            <i class="fas fa-brain"></i>
                         </div>
-                        <div class="tech-item">
-                            <strong>Móvil</strong><br>
-                            React Native, Flutter
+                        <h3>IA & Automatización</h3>
+                        <p>Agentes inteligentes en WhatsApp y Web. Entrenados con tus datos para vender y atender mientras duermes.</p>
+                        <ul class="tech-tags">
+                            <li>Python</li>
+                            <li>OpenAI API</li>
+                            <li>Chatbots</li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-card service-card">
+                        <div class="icon-box icon-blue">
+                            <i class="fas fa-users"></i>
                         </div>
-                        <div class="tech-item">
-                            <strong>Base de Datos</strong><br>
-                            MySQL, MongoDB, PostgreSQL
-                        </div>
-                        <div class="tech-item">
-                            <strong>Cloud</strong><br>
-                            AWS, Azure, Google Cloud
-                        </div>
-                        <div class="tech-item">
-                            <strong>DevOps</strong><br>
-                            Docker, CI/CD, Kubernetes
-                        </div>
+                        <h3>Crecimiento y Comunidad</h3>
+                        <p>Gestión estratégica de redes sociales diseñada no para likes, sino para alimentar de tráfico a tu IA.</p>
+                        <ul class="tech-tags">
+                            <li>Growth</li>
+                            <li>Content</li>
+                            <li>Analytics</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contacto">
-        <div class="container">
-            <h2>Hablemos de tu Proyecto</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Información de Contacto</h3>
-                    <div class="contact-item">
-                        <span>📧</span>
-                        <div>
-                            <strong>Email</strong><br>
-                            glcodesolutions@gmail.com
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <span>📱</span>
-                        <div>
-                            <strong>Teléfono</strong><br>
-                            +52 (55) 1234-5678
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <span>📍</span>
-                        <div>
-                            <strong>Ubicación</strong><br>
-                            Ciudad de México, México
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <span>⏰</span>
-                        <div>
-                            <strong>Horario</strong><br>
-                            Lun - Vie: 9:00 AM - 6:00 PM
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <h3>Envíanos un Mensaje</h3>
-                    <form>
-                        <div class="form-group">
-                            <label for="nombre">Nombre Completo</label>
-                            <input type="text" id="nombre" name="nombre" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="empresa">Empresa</label>
-                            <input type="text" id="empresa" name="empresa">
-                        </div>
-                        <div class="form-group">
-                            <label for="mensaje">Mensaje</label>
-                            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos sobre tu proyecto..." required></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn">Enviar Mensaje</button>
-                    </form>
+        <section id="tech-stack">
+            <div class="tech-marquee">
+                 <div class="tech-track">
+                    <span><i class="fab fa-js"></i> JavaScript</span>
+                    <span><i class="fab fa-python"></i> Python</span>
+                    <span><i class="fab fa-react"></i> React</span>
+                    <span><i class="fab fa-node-js"></i> Node.js</span>
+                    <span><i class="fas fa-robot"></i> OpenAI</span>
+                    <span><i class="fab fa-whatsapp"></i> WhatsApp Business API</span>
+                     <span><i class="fab fa-js"></i> JavaScript</span>
+                    <span><i class="fab fa-python"></i> Python</span>
+                    <span><i class="fab fa-react"></i> React</span>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
+        <section id="contacto">
+            <div class="container contact-container glass-card">
+                <div class="contact-text">
+                    <h2>¿Listo para dejar de operar y empezar a escalar?</h2>
+                    <p>Tu competencia sigue contratando personal para tareas repetitivas. Tú puedes automatizarlas hoy.</p>
+                </div>
+                <div class="contact-action">
+                    <button class="btn btn-primary btn-lg btn-glow">Agendar mi Consultoría Gratuita</button>
+                    <p class="small-print">Ideal para clínicas, e-commerce y servicios B2B.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
     <footer>
-        <div class="container">
-            <p>&copy; 2024 GL Code. Todos los derechos reservados. | Soluciones Tecnológicas Innovadoras</p>
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <span class="logo-gl">GL</span> Mind
+            </div>
+            <p>Tecnología que conecta. Estrategia que escala.</p>
+            <p class="copyright">© 2024 GL Mind Corp.</p>
         </div>
     </footer>
 
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Header background on scroll
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(26, 26, 46, 0.95)';
-            } else {
-                header.style.background = 'linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)';
-            }
-        });
-
-        // Form submission
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.');
-            this.reset();
-        });
-
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                }
-            });
-        }, observerOptions);
-
-        // Observe service cards and other elements
-        document.querySelectorAll('.service-card, .about-text, .tech-grid').forEach(el => {
-            observer.observe(el);
-        });
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>
