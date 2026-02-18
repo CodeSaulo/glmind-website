@@ -160,10 +160,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 <h2 class="gradient-text" style="margin-bottom: 15px;">Agenda tu Sesión</h2>
                 <p style="color: var(--text-secondary); margin-bottom: 20px;">Déjanos tus datos y te contactaremos para coordinar la consultoría.</p>
                 
-                <form id="consultation-form" style="display: flex; flex-direction: column; gap: 15px;">
-                    <input type="text" class="modal-input" placeholder="Nombre completo" required>
-                    <input type="email" class="modal-input" placeholder="Correo electrónico" required>
-                    <textarea class="modal-input" rows="3" placeholder="Cuéntanos brevemente sobre tu proyecto" required></textarea>
+                <!-- REEMPLAZA 'TU_ID_DE_FORMSPREE' CON TU ID REAL (ej: xxyyzz) -->
+                <form id="consultation-form" action="https://formspree.io/f/xkovzwpd" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
+                    <input type="text" name="name" class="modal-input" placeholder="Nombre completo" required>
+                    <input type="email" name="email" class="modal-input" placeholder="Correo electrónico" required>
+                    <textarea name="message" class="modal-input" rows="3" placeholder="Cuéntanos brevemente sobre tu proyecto" required></textarea>
                     
                     <button type="submit" class="btn btn-primary btn-glow" style="justify-content: center;">
                         <i class="fas fa-paper-plane"></i> Enviar Solicitud
@@ -217,22 +218,56 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Manejar envío del formulario (Simulación)
-    form.addEventListener('submit', (e) => {
+    // Manejar envío del formulario REAL con Formspree
+    form.addEventListener('submit', async (e) => {
         e.preventDefault();
         const btn = form.querySelector('button[type="submit"]');
         const originalText = btn.innerHTML;
 
+        // --- Validación de Email ---
+        const emailInput = form.querySelector('input[name="email"]');
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailRegex.test(emailInput.value)) {
+            btn.innerHTML = '<i class="fas fa-exclamation-circle"></i> Email inválido';
+            emailInput.style.borderColor = '#ff4d4d'; // Borde rojo para indicar error
+            
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                emailInput.style.borderColor = ''; // Restaurar estilo original
+            }, 2000);
+            return; // Detiene la ejecución aquí, no envía nada
+        }
+
         btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
         
-        // Simular petición al servidor
-        setTimeout(() => {
-            btn.innerHTML = '<i class="fas fa-check"></i> ¡Enviado!';
+        const formData = new FormData(form);
+
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                btn.innerHTML = '<i class="fas fa-check"></i> ¡Enviado!';
+                setTimeout(() => {
+                    modal.classList.remove('open');
+                    btn.innerHTML = originalText;
+                    form.reset();
+                }, 2000);
+            } else {
+                throw new Error('Error en el servicio de formulario');
+            }
+        } catch (error) {
+            btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Error';
+            alert('Hubo un problema al enviar. Verifica tu conexión o el ID de Formspree.');
             setTimeout(() => {
-                modal.classList.remove('open');
                 btn.innerHTML = originalText;
-                form.reset();
-            }, 1500);
-        }, 1500);
+            }, 3000);
+        }
     });
 });
