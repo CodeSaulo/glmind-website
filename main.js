@@ -9,19 +9,75 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 2. Neural Network Canvas Background
+    // 2. Mobile Menu Toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+            const icon = menuToggle.querySelector('i');
+            if (icon) {
+                if (navLinks.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            }
+        });
+
+        // Cerrar menú al hacer clic en un enlace
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuToggle.classList.remove('active');
+                const icon = menuToggle.querySelector('i');
+                if (icon) {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        });
+
+        // Cerrar menú al hacer clic fuera del menú
+        document.addEventListener('click', (e) => {
+            if (!navLinks.contains(e.target) && !menuToggle.contains(e.target) && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                menuToggle.classList.remove('active');
+                const icon = menuToggle.querySelector('i');
+                if (icon) {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            }
+        });
+    }
+
+    // 3. Neural Network Canvas Background
     // Este código genera puntos y líneas conectadas que se mueven suavemente
     const canvas = document.getElementById('neural-canvas');
     const ctx = canvas.getContext('2d');
 
     let w, h, particles;
-    let particleCount = 60; // Cantidad de nodos
-    const connectionDistance = 120; // Distancia para conectar líneas
+    let particleCount; // Se define dinámicamente
+    let connectionDistance; // Se define dinámicamente
 
     // Ajustar canvas al tamaño de la ventana
     function resize() {
         w = canvas.width = window.innerWidth;
         h = canvas.height = window.innerHeight;
+
+        // Optimización: Reducir carga en pantallas pequeñas (móviles)
+        if (w < 768) {
+            particleCount = 30; // Mitad de partículas para móviles
+            connectionDistance = 80; // Conexiones más cortas
+        } else {
+            particleCount = 60;
+            connectionDistance = 120;
+        }
     }
 
     class Particle {
@@ -95,4 +151,123 @@ document.addEventListener('DOMContentLoaded', () => {
     // Inicializar y manejar redimensionamiento
     window.addEventListener('resize', resize);
     init();
+
+    // 4. Funcionalidad Modal "Agendar Consultoría"
+    // Inyectamos el HTML del modal dinámicamente
+    const modalHTML = `
+        <div class="modal-overlay" id="schedule-modal">
+            <div class="modal-content">
+                <h2 class="gradient-text" style="margin-bottom: 15px;">Agenda tu Sesión</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 20px;">Déjanos tus datos y te contactaremos para coordinar la consultoría.</p>
+                
+                <!-- REEMPLAZA 'TU_ID_DE_FORMSPREE' CON TU ID REAL (ej: xxyyzz) -->
+                <form id="consultation-form" action="https://formspree.io/f/xkovzwpd" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
+                    <input type="text" name="name" class="modal-input" placeholder="Nombre completo" required>
+                    <input type="email" name="email" class="modal-input" placeholder="Correo electrónico" required>
+                    <textarea name="message" class="modal-input" rows="3" placeholder="Cuéntanos brevemente sobre tu proyecto" required></textarea>
+                    
+                    <button type="submit" class="btn btn-primary btn-glow" style="justify-content: center;">
+                        <i class="fas fa-paper-plane"></i> Enviar Solicitud
+                    </button>
+                </form>
+
+                <button class="btn btn-secondary close-modal-btn" style="justify-content: center; border-color: rgba(255,255,255,0.1); margin-top: 15px; width: 100%;">
+                        Cerrar
+                </button>
+            </div>
+        </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+
+    const modal = document.getElementById('schedule-modal');
+    const closeBtn = modal.querySelector('.close-modal-btn');
+    const form = document.getElementById('consultation-form');
+
+    // Detectar clics en cualquier enlace que apunte a #agendar
+    document.addEventListener('click', (e) => {
+        const target = e.target.closest('a');
+        if (target && target.getAttribute('href') === '#agendar') {
+            e.preventDefault();
+            modal.classList.add('open');
+
+            // NUEVO: Cerrar menú móvil si está abierto al abrir el modal
+            if (navLinks && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                if (menuToggle) {
+                    menuToggle.classList.remove('active');
+                    const icon = menuToggle.querySelector('i');
+                    if (icon) {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                }
+            }
+        }
+    });
+
+    // Cerrar modal
+    closeBtn.addEventListener('click', () => modal.classList.remove('open'));
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) modal.classList.remove('open');
+    });
+
+    // Cerrar modal con tecla ESC
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('open')) {
+            modal.classList.remove('open');
+        }
+    });
+
+    // Manejar envío del formulario REAL con Formspree
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const btn = form.querySelector('button[type="submit"]');
+        const originalText = btn.innerHTML;
+
+        // --- Validación de Email ---
+        const emailInput = form.querySelector('input[name="email"]');
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailRegex.test(emailInput.value)) {
+            btn.innerHTML = '<i class="fas fa-exclamation-circle"></i> Email inválido';
+            emailInput.style.borderColor = '#ff4d4d'; // Borde rojo para indicar error
+            
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                emailInput.style.borderColor = ''; // Restaurar estilo original
+            }, 2000);
+            return; // Detiene la ejecución aquí, no envía nada
+        }
+
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+        
+        const formData = new FormData(form);
+
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                btn.innerHTML = '<i class="fas fa-check"></i> ¡Enviado!';
+                setTimeout(() => {
+                    modal.classList.remove('open');
+                    btn.innerHTML = originalText;
+                    form.reset();
+                }, 2000);
+            } else {
+                throw new Error('Error en el servicio de formulario');
+            }
+        } catch (error) {
+            btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Error';
+            alert('Hubo un problema al enviar. Verifica tu conexión o el ID de Formspree.');
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+            }, 3000);
+        }
+    });
 });
