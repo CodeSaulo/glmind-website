@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p style="color: var(--text-secondary); margin-bottom: 20px;">Déjanos tus datos y te contactaremos para coordinar la consultoría.</p>
                 
                 <!-- REEMPLAZA 'TU_ID_DE_FORMSPREE' CON TU ID REAL (ej: xxyyzz) -->
-                <form id="consultation-form" action="https://formspree.io/f/xkovzwpd" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
+                <form id="consultation-form" action="https://formspree.io/f/mqedjlvl" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
                     <input type="text" name="name" class="modal-input" placeholder="Nombre completo" required>
                     <input type="email" name="email" class="modal-input" placeholder="Correo electrónico" required>
                     <textarea name="message" class="modal-input" rows="3" placeholder="Cuéntanos brevemente sobre tu proyecto" required></textarea>

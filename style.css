@@ -304,6 +304,36 @@ footer {
 }
 .footer-logo { font-size: 1.5rem; font-weight: bold; margin-bottom: 10px; color: white;}
 
+/* --- Redes Sociales --- */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 25px 0;
+}
+
+.social-icon {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-icon:hover {
+    transform: translateY(-5px);
+    background: var(--gradient-main);
+    box-shadow: 0 0 20px rgba(189, 0, 255, 0.4);
+    border-color: transparent;
+}
+
 /* --- Responsive Básico --- */
 @media (max-width: 768px) {
     .menu-toggle { display: block; cursor: pointer; transition: all 0.3s ease; }
