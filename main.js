@@ -156,11 +156,11 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('click', (e) => {
         const target = e.target.closest('a');
         // Interceptamos #agendar y el correo antiguo para abrir la app de correo con el email correcto
-        if (target && (target.getAttribute('href') === '#agendar' || target.getAttribute('href') === 'mailto:hola@glminds.com' || target.getAttribute('href') === 'mailto:info@glminds.com')) {
+        if (target && target.getAttribute('href') === 'mailto:contacto@glminds.com') {
             e.preventDefault();
             const subject = "Solicitud de Información";
             const body = "Hola, me gustaría recibir más información sobre...";
-            window.location.href = `mailto:info@glminds.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = `mailto:contacto@glminds.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         }
     });
 });
