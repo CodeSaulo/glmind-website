@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
         draw() {
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-            ctx.fillStyle = 'rgba(0, 242, 255, 0.5)'; // Color Cian de tus acentos
+            ctx.fillStyle = 'rgba(34, 211, 166, 0.5)'; // Turquesa de marca
             ctx.fill();
             ctx.closePath();
         }
@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (dist < connectionDistance) {
                     // La opacidad de la línea depende de la distancia
                     ctx.beginPath();
-                    ctx.strokeStyle = `rgba(189, 0, 255, ${1 - dist / connectionDistance})`; // Color Morado
+                    ctx.strokeStyle = `rgba(59, 130, 246, ${1 - dist / connectionDistance})`; // Azul de marca
                     ctx.lineWidth = 0.5;
                     ctx.moveTo(particles[i].x, particles[i].y);
                     ctx.lineTo(particles[j].x, particles[j].y);
@@ -156,11 +156,11 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('click', (e) => {
         const target = e.target.closest('a');
         // Interceptamos #agendar y el correo antiguo para abrir la app de correo con el email correcto
-        if (target && (target.getAttribute('href') === '#agendar' || target.getAttribute('href') === 'mailto:hola@glminds.com' || target.getAttribute('href') === 'mailto:info@glminds.com')) {
+        if (target && target.getAttribute('href') === 'mailto:contacto@glminds.com') {
             e.preventDefault();
             const subject = "Solicitud de Información";
             const body = "Hola, me gustaría recibir más información sobre...";
-            window.location.href = `mailto:info@glminds.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = `mailto:contacto@glminds.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         }
     });
 });
