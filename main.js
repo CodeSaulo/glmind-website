@@ -163,4 +163,25 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = `mailto:contacto@glminds.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         }
     });
+
+
+    // Solicitud de demostración de GL Minds One
+    const demoForm = document.getElementById('demo-form');
+    if (demoForm) {
+        demoForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const form = new FormData(demoForm);
+            const subject = 'Solicitud de demo de GL Minds One';
+            const body = [
+                'Hola GL Minds, me interesa conocer GL Minds One.',
+                '',
+                'Nombre: ' + form.get('nombre'),
+                'Negocio: ' + form.get('negocio'),
+                'Giro: ' + form.get('giro'),
+                'WhatsApp: ' + form.get('whatsapp'),
+                'Necesidad: ' + (form.get('necesidad') || 'No especificada')
+            ].join('\\n');
+            window.location.href = 'mailto:contacto@glminds.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+        });
+    }
 });
