@@ -1,286 +1,209 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>GL Minds | Software, Desarrollo Web y Automatización con IA</title>
-    <meta name="description" content="Creamos software SaaS, sitios web, APIs, chatbots y agentes de IA para ayudar a negocios a organizar citas, vender, atender y automatizar tareas.">
-    <meta name="keywords" content="software de citas, agenda para estética, agenda para clínicas, SaaS México, desarrollo web, APIs, agentes de IA, chatbots, punto de venta, GL Minds">
-    <link rel="canonical" href="https://glminds.com/">
-    
-    <meta property="og:title" content="GL Minds | Software que hace avanzar negocios">
-    <meta property="og:description" content="Productos SaaS y soluciones digitales para organizar, vender, atender y automatizar.">
-    <meta property="og:image" content="https://glminds.com/assets/images/logo-mark.svg">
-    <meta property="og:url" content="https://glminds.com/">
-    <meta property="og:type" content="website">
-    <meta name="theme-color" content="#0a0a12">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "GL Minds",
-      "url": "https://glminds.com/",
-      "logo": "https://glminds.com/assets/images/logo-mark.svg",
-      "slogan": "Software que simplifica. Negocios que avanzan.",
-      "description": "Empresa especializada en desarrollo web, APIs, chatbots y agentes de Inteligencia Artificial para automatización de negocios.",
-      "founders": [
-        {
-          "@type": "Person",
-          "name": "Saul J. Gutierrez"
-        },
-        {
-          "@type": "Person",
-          "name": "José María C. Lopez"
-        }
-      ]
-    }
-    </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GL Minds | Software, SaaS y Automatización con IA</title>
+  <meta name="description" content="GL Minds crea productos SaaS, desarrollo web, chatbots y agentes de IA para organizar, vender, atender y automatizar negocios.">
+  <link rel="canonical" href="https://glminds.com/">
+  <meta property="og:title" content="GL Minds | Tecnología para negocios que quieren crecer">
+  <meta property="og:description" content="Productos SaaS y soluciones con IA para organizar, vender, atender y automatizar.">
+  <meta property="og:image" content="https://glminds.com/assets/images/logo-mark.svg">
+  <meta property="og:url" content="https://glminds.com/">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#061820">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <canvas id="neural-canvas"></canvas>
 
-    <canvas id="neural-canvas"></canvas>
+  <header id="navbar">
+    <div class="container nav-container">
+      <a href="#inicio" class="logo" aria-label="GL Minds inicio">
+        <img src="assets/images/logo-mark.svg" alt="GL Minds" class="logo-mark">
+        <span class="logo-wordmark">GL <strong>Minds</strong></span>
+      </a>
+      <nav class="nav-links">
+        <a href="#soluciones">Soluciones</a>
+        <a href="#demos">Demos</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#contacto" class="btn btn-primary btn-sm">Hablemos</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Abrir menú"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
 
-    <header id="navbar">
-        <div class="container nav-container">
-            <a href="#" class="logo">
-                <img src="assets/images/logo-mark.svg" alt="GL Minds" class="logo-mark">
-                <span class="logo-wordmark">GL <strong>Minds</strong></span>
-            </a>
-            <nav class="nav-links">
-                <a href="#servicios">Servicios</a>
-                <a href="#gl-minds-one">GL Minds One</a>
-                <a href="#casos-de-uso">Resultados</a>
-                <a href="#contacto" class="btn btn-primary btn-sm">Solicitar diagnóstico</a>
-            </nav>
-            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+  <main>
+    <section id="inicio" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="badge-tech">Software pensado para negocios reales</span>
+          <h1>Soluciones digitales para <span class="gradient-text">hacer crecer tu negocio.</span></h1>
+          <p>En GL Minds construimos productos SaaS y soluciones con inteligencia artificial para organizar operaciones, vender mejor, atender clientes y automatizar procesos.</p>
+          <div class="cta-group">
+            <a href="#soluciones" class="btn btn-primary btn-glow">Explorar soluciones <i class="fas fa-arrow-right"></i></a>
+            <a href="#contacto" class="btn btn-secondary">Cuéntanos tu reto</a>
+          </div>
+          <div class="hero-proof">
+            <span><i class="fas fa-check"></i> Demos reales</span>
+            <span><i class="fas fa-check"></i> Soluciones escalables</span>
+            <span><i class="fas fa-check"></i> Acompañamiento cercano</span>
+          </div>
         </div>
-    </header>
-
-    <main>
-        <section id="hero">
-            <div class="container hero-content">
-                <span class="badge-tech">Software pensado para negocios reales</span>
-                <h1>
-                    Creamos tecnología para que tu negocio<br>
-                    <span class="gradient-text">trabaje mejor.</span>
-                </h1>
-                <p class="hero-subtitle">
-                    Desarrollamos productos SaaS y soluciones a medida: sistemas de citas, sitios web, APIs, chatbots y agentes de IA sencillos de usar y listos para crecer contigo.
-                </p>
-                <div class="cta-group">
-                    <a href="#contacto" class="btn btn-primary btn-glow">Solicitar diagnóstico gratuito <i class="fas fa-arrow-right"></i></a>
-                    <a href="#productos" class="btn btn-secondary">Conocer nuestros productos</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="servicios">
-            <div class="container">
-                <div class="section-header text-center">
-                    <h2>Soluciones digitales que generan <span class="gradient-text">resultados</span></h2>
-                    <p>Cuatro servicios especializados, diseñados alrededor de los retos reales de tu negocio.</p>
-                </div>
-
-                <div class="services-grid">
-                    <div class="glass-card service-card">
-                        <div class="icon-box icon-cyan">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <h3>Desarrollo Web</h3>
-                        <p>Sitios y plataformas rápidas, responsivas y creadas para convertir visitas en oportunidades reales.</p>
-                        <ul class="tech-tags">
-                            <li>Landing pages</li>
-                            <li>Sitios corporativos</li>
-                            <li>Sistemas web</li>
-                        </ul>
-                    </div>
-
-                    <div class="glass-card service-card">
-                        <div class="icon-box icon-purple">
-                            <i class="fas fa-network-wired"></i>
-                        </div>
-                        <h3>APIs e Integraciones</h3>
-                        <p>Conectamos tus herramientas para eliminar tareas manuales y lograr que la información fluya sin fricción.</p>
-                        <ul class="tech-tags">
-                            <li>APIs a medida</li>
-                            <li>Pagos y CRM</li>
-                            <li>Automatización</li>
-                        </ul>
-                    </div>
-
-                    <div class="glass-card service-card">
-                        <div class="icon-box icon-blue">
-                            <i class="fas fa-comments"></i>
-                        </div>
-                        <h3>Chatbots</h3>
-                        <p>Atención inmediata en web y WhatsApp para responder preguntas, calificar prospectos y agendar citas.</p>
-                        <ul class="tech-tags">
-                            <li>WhatsApp</li>
-                            <li>Atención 24/7</li>
-                            <li>Generación de leads</li>
-                        </ul>
-                    </div>
-
-                    <div class="glass-card service-card featured">
-                        <div class="icon-box icon-purple">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <h3>Agentes de IA</h3>
-                        <p>Agentes que entienden tu negocio, consultan tus datos y ejecutan procesos completos con supervisión.</p>
-                        <ul class="tech-tags">
-                            <li>IA aplicada</li>
-                            <li>Base de conocimiento</li>
-                            <li>Flujos autónomos</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="gl-minds-one">
-            <div class="container">
-                <div class="section-header products-heading">
-                    <span class="badge-tech">Nuestro producto SaaS</span>
-                    <h2>Conoce <span class="gradient-text">GL Minds One</span></h2>
-                    <p>Una plataforma de gestión y citas creada para que negocios locales trabajen con más orden, control y profesionalismo.</p>
-                </div>
-
-                <div class="product-showcase glass-card">
-                    <div class="product-copy">
-                        <span class="product-status"><i class="fas fa-circle"></i> Demo interactiva disponible</span>
-                        <h3>GL Minds One</h3>
-                        <p class="product-lead">Agenda, clientes, servicios, equipo y reportes desde un solo lugar. Adaptada a la operación real de clínicas dentales, spas, estéticas y ópticas.</p>
-                        <div class="industry-chips">
-                            <span><i class="fas fa-tooth"></i> Clínicas dentales</span><span><i class="fas fa-spa"></i> Spas</span><span><i class="fas fa-cut"></i> Estéticas</span><span><i class="fas fa-glasses"></i> Ópticas</span>
-                        </div>
-                        <div class="product-actions">
-                            <a href="https://demo.glminds.com" target="_blank" rel="noopener" class="btn btn-primary btn-glow">Ver demo interactiva <i class="fas fa-arrow-up-right-from-square"></i></a>
-                            <a href="#contacto" class="btn btn-secondary">Solicitar una demostración</a>
-                        </div>
-                    </div>
-                    <div class="plans-preview" aria-label="Vista previa de los niveles de la plataforma">
-                        <article>
-                            <span>01</span><i class="far fa-calendar-check"></i>
-                            <div><h4>Agenda</h4><p>Citas, clientes y horarios.</p></div>
-                        </article>
-                        <article class="active">
-                            <span>02</span><i class="fas fa-store-alt"></i>
-                            <div><h4>Gestión</h4><p>Personal, servicios, reportes y recordatorios.</p></div>
-                        </article>
-                        <article>
-                            <span>03</span><i class="fas fa-notes-medical"></i>
-                            <div><h4>Seguimiento</h4><p>Fichas, expedientes, permisos y automatización.</p></div>
-                        </article>
-                    </div>
-                </div>
-
-                <div class="one-benefits" aria-label="Beneficios de GL Minds One">
-                    <article><i class="far fa-calendar-check"></i><strong>Menos citas perdidas</strong><span>Organiza horarios y recordatorios.</span></article>
-                    <article><i class="fas fa-users"></i><strong>Información centralizada</strong><span>Clientes, servicios y equipo en orden.</span></article>
-                    <article><i class="fas fa-chart-line"></i><strong>Decisiones más claras</strong><span>Consulta ocupación, recurrencia e ingresos.</span></article>
-                </div>
-
-                <div class="one-plans">
-                    <div class="section-header text-center compact-heading"><span class="badge-tech">Planes desde $899 MXN al mes</span><h3>Empieza con lo que hoy necesita tu negocio</h3><p>Precios mensuales estimados para los primeros clientes. Configuración y acompañamiento incluidos.</p></div>
-                    <div class="pricing-grid">
-                        <article class="glass-card price-card"><span>Esencial</span><h4><small>Desde</small> $899 <small>MXN/mes</small></h4><p>Agenda, clientes, servicios y hasta 2 usuarios.</p><small class="setup-price">Implementación desde $1,500 MXN</small><a href="#contacto" class="plan-link">Me interesa</a></article>
-                        <article class="glass-card price-card recommended"><b>Más elegido</b><span>Profesional</span><h4><small>Desde</small> $1,399 <small>MXN/mes</small></h4><p>Hasta 5 usuarios, reportes, reservación, fichas y recordatorios.</p><small class="setup-price">Implementación desde $2,500 MXN</small><a href="#contacto" class="plan-link">Solicitar demo</a></article>
-                        <article class="glass-card price-card"><span>Negocio Plus</span><h4><small>Desde</small> $2,199 <small>MXN/mes</small></h4><p>Hasta 10 usuarios, roles, fichas avanzadas e integraciones.</p><small class="setup-price">Implementación desde $4,500 MXN</small><a href="#contacto" class="plan-link">Hablar con GL Minds</a></article>
-                    </div>
-                    <p class="pricing-note"><i class="fas fa-circle-info"></i> Precios de referencia por negocio y una sucursal. La cotización final depende de usuarios, funciones y volumen de uso. WhatsApp, dominios propios, pagos en línea, consumos e integraciones especiales se cotizan por separado. Precios antes de IVA.</p>
-                    <div class="founder-offer"><i class="fas fa-rocket"></i><div><strong>Programa de clientes fundadores</strong><span>Precio preferencial y descuento de implementación para los primeros cinco negocios, sujeto a validación.</span></div></div>
-                </div>
-
-                <div class="next-product glass-card">
-                    <div class="next-icon"><i class="fas fa-cash-register"></i></div>
-                    <div><span>Próxima línea de producto</span><h3>Punto de venta para negocios de comida</h3><p>Pedidos, cuentas automáticas, comprobantes y tickets digitales para hamburgueserías, alitas, hot dogs y comercios locales.</p></div>
-                    <strong>Próximamente</strong>
-                </div>
-            </div>
-        </section>
-
-        <section id="casos-de-uso">
-            <div class="container">
-                <div class="section-header text-center">
-                    <h2>Menos fricción. <span class="gradient-text">Más negocio.</span></h2>
-                    <p>Tu tecnología debe trabajar a favor de tu equipo y de tus clientes.</p>
-                </div>
-
-                <div class="services-grid">
-                    <div class="glass-card service-card">
-                        <div class="icon-box icon-cyan">
-                            <i class="fas fa-user-md"></i>
-                        </div>
-                        <h3>Responde y convierte más rápido</h3>
-                        <p>Atiende consultas, califica prospectos y agenda citas incluso cuando tu equipo está fuera de horario.</p>
-                    </div>
-
-                    <div class="glass-card service-card">
-                        <div class="icon-box icon-purple">
-                            <i class="fas fa-store"></i>
-                        </div>
-                        <h3>Reduce el trabajo manual</h3>
-                        <p>Conecta herramientas y automatiza procesos repetitivos para que tu equipo se concentre en tareas de mayor valor.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="tech-stack">
-            <div class="tech-marquee">
-                 <div class="tech-track">
-                    <span><i class="fab fa-js"></i> JavaScript</span>
-                    <span><i class="fab fa-python"></i> Python</span>
-                    <span><i class="fab fa-react"></i> React</span>
-                    <span><i class="fab fa-node-js"></i> Node.js</span>
-                    <span><i class="fas fa-robot"></i> OpenAI API</span>
-                    <span><i class="fab fa-whatsapp"></i> WhatsApp Business</span>
-                    <span><i class="fab fa-js"></i> JavaScript</span>
-                    <span><i class="fab fa-python"></i> Python</span>
-                    <span><i class="fab fa-react"></i> React</span>
-                </div>
-            </div>
-        </section>
-
-        <section id="contacto">
-            <div class="container contact-container glass-card">
-                <div class="contact-text"><span class="badge-tech">Demostración personalizada</span><h2>Conoce cómo GL Minds One se adaptaría a tu negocio</h2><p>Déjanos tus datos. Te mostraremos la versión de tu giro y resolveremos tus dudas sin compromiso.</p><ul class="contact-promises"><li><i class="fas fa-check"></i> Recorrido de 15 minutos</li><li><i class="fas fa-check"></i> Recomendación del plan adecuado</li><li><i class="fas fa-check"></i> Precio fundador para primeros clientes</li></ul></div>
-                <form id="demo-form" class="demo-form">
-                    <label>Nombre completo<input required name="nombre" autocomplete="name" placeholder="Tu nombre"></label>
-                    <label>Negocio<input required name="negocio" placeholder="Nombre de tu negocio"></label>
-                    <div class="form-row"><label>Giro<select required name="giro"><option value="">Selecciona</option><option>Clínica dental</option><option>Spa</option><option>Estética</option><option>Óptica</option><option>Otro</option></select></label><label>WhatsApp<input required name="whatsapp" inputmode="tel" autocomplete="tel" placeholder="55 1234 5678"></label></div>
-                    <label>¿Qué te gustaría mejorar?<textarea name="necesidad" rows="3" placeholder="Ej. organizar citas y reducir cancelaciones"></textarea></label>
-                    <button type="submit" class="btn btn-primary btn-glow">Solicitar demostración <i class="fas fa-arrow-right"></i></button>
-                    <p class="small-print">Sin compromiso · Respuesta en menos de 24 horas hábiles.</p>
-                </form>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container footer-content">
-            <div class="footer-logo">
-                <img src="assets/images/logo-mark.svg" alt="" class="footer-logo-mark">
-                <span>GL <strong>Minds</strong></span>
-            </div>
-            <p class="brand-slogan">Software que simplifica. Negocios que avanzan.</p>
-            <p>Productos SaaS, desarrollo web, APIs y soluciones de inteligencia artificial.</p>
-            <div class="social-links">
-                <a href="https://www.facebook.com/share/1L3wKja75z/?mibextid=wwXIfr" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com/glminds?igsh=bm0ycXgzNTA1Y2sx&utm_source=qr" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <!--<a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>-->
-            </div>
-            <p class="copyright">© 2026 GL Minds. Todos los derechos reservados.</p>
+        <div class="hero-panel glass-card">
+          <span class="eyebrow">Ecosistema GL Minds</span>
+          <article><i class="far fa-calendar-check"></i><div><strong>GL Minds One</strong><small>Citas y operación</small></div><b>Disponible</b></article>
+          <article><i class="fas fa-bag-shopping"></i><div><strong>GL Minds Orders</strong><small>Pedidos y producción</small></div><b>Disponible</b></article>
+          <article><i class="fas fa-comments"></i><div><strong>GL Minds Chat</strong><small>Atención automatizada</small></div><em>En desarrollo</em></article>
+          <article><i class="fas fa-brain"></i><div><strong>GL Minds Agent</strong><small>IA que ejecuta tareas</small></div><em>En desarrollo</em></article>
         </div>
-    </footer>
+      </div>
+    </section>
 
-    <script src="main.js"></script>
+    <section id="soluciones">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="badge-tech">Nuestras soluciones</span>
+          <h2>Un producto para cada <span class="gradient-text">necesidad del negocio</span></h2>
+          <p>No vendemos tecnología por venderla. Diseñamos herramientas que resuelven problemas concretos y pueden crecer contigo.</p>
+        </div>
+
+        <div class="products-grid">
+          <article class="product-card glass-card featured-product">
+            <div class="product-icon"><i class="far fa-calendar-check"></i></div>
+            <span class="product-status live"><i class="fas fa-circle"></i> Demo disponible</span>
+            <h3>GL Minds One</h3>
+            <p>Agenda, clientes, servicios, equipo y reportes en una sola plataforma para clínicas, spas, estéticas, ópticas y profesionales.</p>
+            <div class="chips"><span>Agenda</span><span>Clientes</span><span>Reportes</span><span>Roles</span></div>
+            <div class="product-actions">
+              <a href="https://demo.glminds.com" target="_blank" rel="noopener" class="btn btn-primary">Ver demo <i class="fas fa-arrow-up-right-from-square"></i></a>
+              <a href="#contacto" class="text-link">Solicitar propuesta</a>
+            </div>
+          </article>
+
+          <article class="product-card glass-card featured-product orders-card">
+            <div class="product-icon"><i class="fas fa-bag-shopping"></i></div>
+            <span class="product-status live"><i class="fas fa-circle"></i> Demo disponible</span>
+            <h3>GL Minds Orders</h3>
+            <p>Convierte pedidos desordenados en un flujo simple: catálogo, carrito, fecha disponible, capacidad de producción y panel administrativo.</p>
+            <div class="chips"><span>Pedidos</span><span>Capacidad</span><span>Producción</span><span>Panel</span></div>
+            <div class="product-actions">
+              <a href="https://orders.glminds.com" target="_blank" rel="noopener" class="btn btn-primary">Probar Orders <i class="fas fa-arrow-up-right-from-square"></i></a>
+              <a href="#contacto" class="text-link">Quiero implementarlo</a>
+            </div>
+          </article>
+
+          <article class="product-card glass-card coming-card">
+            <div class="product-icon"><i class="fas fa-comments"></i></div>
+            <span class="product-status soon">En desarrollo</span>
+            <h3>GL Minds Chat</h3>
+            <p>Chatbots empresariales para responder preguntas, presentar servicios, captar prospectos y mantener atención disponible 24/7.</p>
+            <div class="chips"><span>Chat web</span><span>FAQs</span><span>Leads</span><span>24/7</span></div>
+            <a href="#contacto" class="text-link">Me interesa esta solución</a>
+          </article>
+
+          <article class="product-card glass-card coming-card">
+            <div class="product-icon"><i class="fas fa-brain"></i></div>
+            <span class="product-status soon">En desarrollo</span>
+            <h3>GL Minds Agent</h3>
+            <p>Agentes de IA que entienden una solicitud, consultan herramientas y ejecutan tareas como registrar datos, consultar disponibilidad o iniciar procesos.</p>
+            <div class="chips"><span>IA</span><span>Herramientas</span><span>Automatización</span><span>Acciones</span></div>
+            <a href="#contacto" class="text-link">Explorar un caso de uso</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="demos" class="demos-section">
+      <div class="container demo-banner glass-card">
+        <div>
+          <span class="badge-tech">Pruébalo antes de decidir</span>
+          <h2>No te contamos lo que hacemos. <span class="gradient-text">Te lo mostramos.</span></h2>
+          <p>Explora nuestras demos comerciales y visualiza cómo podría funcionar la solución en tu propio negocio.</p>
+        </div>
+        <div class="demo-buttons">
+          <a href="https://demo.glminds.com" target="_blank" rel="noopener" class="btn btn-secondary"><i class="far fa-calendar-check"></i> Demo One</a>
+          <a href="https://orders.glminds.com" target="_blank" rel="noopener" class="btn btn-primary"><i class="fas fa-bag-shopping"></i> Demo Orders</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicios">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="badge-tech">También desarrollamos a medida</span>
+          <h2>Tecnología que se adapta a <span class="gradient-text">tu operación</span></h2>
+          <p>Cuando un producto estándar no es suficiente, construimos la pieza que falta.</p>
+        </div>
+        <div class="services-grid">
+          <article class="service-card glass-card"><i class="fas fa-code"></i><h3>Desarrollo Web</h3><p>Landing pages, sitios corporativos y sistemas web enfocados en convertir y operar mejor.</p></article>
+          <article class="service-card glass-card"><i class="fas fa-network-wired"></i><h3>APIs e Integraciones</h3><p>Conectamos herramientas, pagos, CRM y sistemas para reducir trabajo manual.</p></article>
+          <article class="service-card glass-card"><i class="fas fa-comments"></i><h3>Chatbots</h3><p>Asistentes para web y canales de mensajería que informan, orientan y captan oportunidades.</p></article>
+          <article class="service-card glass-card"><i class="fas fa-brain"></i><h3>Agentes de IA</h3><p>Automatizaciones inteligentes que pueden usar herramientas y ejecutar procesos con control.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="modelo" class="model-section">
+      <div class="container model-grid">
+        <div class="section-header">
+          <span class="badge-tech">Propuesta a tu medida</span>
+          <h2>Primero entendemos tu negocio. <span class="gradient-text">Después cotizamos.</span></h2>
+          <p>Preferimos recomendar la solución correcta según usuarios, funciones, volumen e integraciones, en lugar de obligarte a elegir por una tabla de precios genérica.</p>
+        </div>
+        <div class="steps glass-card">
+          <article><b>01</b><div><strong>Diagnóstico</strong><span>Entendemos cómo trabajas hoy y dónde está la fricción.</span></div></article>
+          <article><b>02</b><div><strong>Demo</strong><span>Te mostramos una experiencia cercana a tu caso real.</span></div></article>
+          <article><b>03</b><div><strong>Propuesta</strong><span>Definimos implementación, servicio mensual y alcance.</span></div></article>
+          <article><b>04</b><div><strong>Puesta en marcha</strong><span>Configuramos, acompañamos y evolucionamos contigo.</span></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <div class="container contact-container glass-card">
+        <div class="contact-text">
+          <span class="badge-tech">Hablemos de tu proyecto</span>
+          <h2>¿Qué quieres mejorar en tu negocio?</h2>
+          <p>Cuéntanos tu objetivo y te recomendamos qué solución de GL Minds tiene más sentido para ti.</p>
+          <ul>
+            <li><i class="fas fa-check"></i> Diagnóstico inicial</li>
+            <li><i class="fas fa-check"></i> Demo cuando aplique</li>
+            <li><i class="fas fa-check"></i> Propuesta según tu operación</li>
+          </ul>
+        </div>
+        <form id="demo-form" class="demo-form">
+          <label>Nombre<input required name="nombre" autocomplete="name" placeholder="Tu nombre"></label>
+          <label>Negocio<input required name="negocio" placeholder="Nombre de tu negocio"></label>
+          <label>Me interesa
+            <select required name="solucion">
+              <option value="">Selecciona una opción</option>
+              <option>GL Minds One</option>
+              <option>GL Minds Orders</option>
+              <option>GL Minds Chat</option>
+              <option>GL Minds Agent</option>
+              <option>Desarrollo a medida</option>
+            </select>
+          </label>
+          <label>WhatsApp<input required name="whatsapp" inputmode="tel" placeholder="Tu número"></label>
+          <label>¿Qué necesitas?<textarea name="necesidad" rows="4" placeholder="Cuéntanos brevemente qué quieres resolver"></textarea></label>
+          <button class="btn btn-primary btn-glow" type="submit">Solicitar información <i class="fas fa-arrow-right"></i></button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-brand"><img src="assets/images/logo-mark.svg" alt=""><strong>GL Minds</strong><span>Software que simplifica. Negocios que avanzan.</span></div>
+      <p>© 2026 GL Minds. Soluciones digitales, SaaS e Inteligencia Artificial.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
 </body>
 </html>
