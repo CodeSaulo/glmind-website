@@ -1,209 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GL Minds | Software, SaaS y Automatización con IA</title>
   <meta name="description" content="GL Minds crea productos SaaS, desarrollo web, chatbots y agentes de IA para organizar, vender, atender y automatizar negocios.">
-  <link rel="canonical" href="https://glminds.com/">
-  <meta property="og:title" content="GL Minds | Tecnología para negocios que quieren crecer">
-  <meta property="og:description" content="Productos SaaS y soluciones con IA para organizar, vender, atender y automatizar.">
-  <meta property="og:image" content="https://glminds.com/assets/images/logo-mark.svg">
-  <meta property="og:url" content="https://glminds.com/">
-  <meta property="og:type" content="website">
-  <meta name="theme-color" content="#061820">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="canonical" href="https://glminds.com/"><meta name="theme-color" content="#061820">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <canvas id="neural-canvas"></canvas>
-
-  <header id="navbar">
-    <div class="container nav-container">
-      <a href="#inicio" class="logo" aria-label="GL Minds inicio">
-        <img src="assets/images/logo-mark.svg" alt="GL Minds" class="logo-mark">
-        <span class="logo-wordmark">GL <strong>Minds</strong></span>
-      </a>
-      <nav class="nav-links">
-        <a href="#soluciones">Soluciones</a>
-        <a href="#demos">Demos</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#contacto" class="btn btn-primary btn-sm">Hablemos</a>
-      </nav>
-      <button class="menu-toggle" aria-label="Abrir menú"><i class="fas fa-bars"></i></button>
-    </div>
-  </header>
-
-  <main>
-    <section id="inicio" class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <span class="badge-tech">Software pensado para negocios reales</span>
-          <h1>Soluciones digitales para <span class="gradient-text">hacer crecer tu negocio.</span></h1>
-          <p>En GL Minds construimos productos SaaS y soluciones con inteligencia artificial para organizar operaciones, vender mejor, atender clientes y automatizar procesos.</p>
-          <div class="cta-group">
-            <a href="#soluciones" class="btn btn-primary btn-glow">Explorar soluciones <i class="fas fa-arrow-right"></i></a>
-            <a href="#contacto" class="btn btn-secondary">Cuéntanos tu reto</a>
-          </div>
-          <div class="hero-proof">
-            <span><i class="fas fa-check"></i> Demos reales</span>
-            <span><i class="fas fa-check"></i> Soluciones escalables</span>
-            <span><i class="fas fa-check"></i> Acompañamiento cercano</span>
-          </div>
-        </div>
-        <div class="hero-panel glass-card">
-          <span class="eyebrow">Ecosistema GL Minds</span>
-          <article><i class="far fa-calendar-check"></i><div><strong>GL Minds One</strong><small>Citas y operación</small></div><b>Disponible</b></article>
-          <article><i class="fas fa-bag-shopping"></i><div><strong>GL Minds Orders</strong><small>Pedidos y producción</small></div><b>Disponible</b></article>
-          <article><i class="fas fa-comments"></i><div><strong>GL Minds Chat</strong><small>Atención automatizada</small></div><em>En desarrollo</em></article>
-          <article><i class="fas fa-brain"></i><div><strong>GL Minds Agent</strong><small>IA que ejecuta tareas</small></div><em>En desarrollo</em></article>
-        </div>
-      </div>
-    </section>
-
-    <section id="soluciones">
-      <div class="container">
-        <div class="section-header text-center">
-          <span class="badge-tech">Nuestras soluciones</span>
-          <h2>Un producto para cada <span class="gradient-text">necesidad del negocio</span></h2>
-          <p>No vendemos tecnología por venderla. Diseñamos herramientas que resuelven problemas concretos y pueden crecer contigo.</p>
-        </div>
-
-        <div class="products-grid">
-          <article class="product-card glass-card featured-product">
-            <div class="product-icon"><i class="far fa-calendar-check"></i></div>
-            <span class="product-status live"><i class="fas fa-circle"></i> Demo disponible</span>
-            <h3>GL Minds One</h3>
-            <p>Agenda, clientes, servicios, equipo y reportes en una sola plataforma para clínicas, spas, estéticas, ópticas y profesionales.</p>
-            <div class="chips"><span>Agenda</span><span>Clientes</span><span>Reportes</span><span>Roles</span></div>
-            <div class="product-actions">
-              <a href="https://demo.glminds.com" target="_blank" rel="noopener" class="btn btn-primary">Ver demo <i class="fas fa-arrow-up-right-from-square"></i></a>
-              <a href="#contacto" class="text-link">Solicitar propuesta</a>
-            </div>
-          </article>
-
-          <article class="product-card glass-card featured-product orders-card">
-            <div class="product-icon"><i class="fas fa-bag-shopping"></i></div>
-            <span class="product-status live"><i class="fas fa-circle"></i> Demo disponible</span>
-            <h3>GL Minds Orders</h3>
-            <p>Convierte pedidos desordenados en un flujo simple: catálogo, carrito, fecha disponible, capacidad de producción y panel administrativo.</p>
-            <div class="chips"><span>Pedidos</span><span>Capacidad</span><span>Producción</span><span>Panel</span></div>
-            <div class="product-actions">
-              <a href="https://orders.glminds.com" target="_blank" rel="noopener" class="btn btn-primary">Probar Orders <i class="fas fa-arrow-up-right-from-square"></i></a>
-              <a href="#contacto" class="text-link">Quiero implementarlo</a>
-            </div>
-          </article>
-
-          <article class="product-card glass-card coming-card">
-            <div class="product-icon"><i class="fas fa-comments"></i></div>
-            <span class="product-status soon">En desarrollo</span>
-            <h3>GL Minds Chat</h3>
-            <p>Chatbots empresariales para responder preguntas, presentar servicios, captar prospectos y mantener atención disponible 24/7.</p>
-            <div class="chips"><span>Chat web</span><span>FAQs</span><span>Leads</span><span>24/7</span></div>
-            <a href="#contacto" class="text-link">Me interesa esta solución</a>
-          </article>
-
-          <article class="product-card glass-card coming-card">
-            <div class="product-icon"><i class="fas fa-brain"></i></div>
-            <span class="product-status soon">En desarrollo</span>
-            <h3>GL Minds Agent</h3>
-            <p>Agentes de IA que entienden una solicitud, consultan herramientas y ejecutan tareas como registrar datos, consultar disponibilidad o iniciar procesos.</p>
-            <div class="chips"><span>IA</span><span>Herramientas</span><span>Automatización</span><span>Acciones</span></div>
-            <a href="#contacto" class="text-link">Explorar un caso de uso</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="demos" class="demos-section">
-      <div class="container demo-banner glass-card">
-        <div>
-          <span class="badge-tech">Pruébalo antes de decidir</span>
-          <h2>No te contamos lo que hacemos. <span class="gradient-text">Te lo mostramos.</span></h2>
-          <p>Explora nuestras demos comerciales y visualiza cómo podría funcionar la solución en tu propio negocio.</p>
-        </div>
-        <div class="demo-buttons">
-          <a href="https://demo.glminds.com" target="_blank" rel="noopener" class="btn btn-secondary"><i class="far fa-calendar-check"></i> Demo One</a>
-          <a href="https://orders.glminds.com" target="_blank" rel="noopener" class="btn btn-primary"><i class="fas fa-bag-shopping"></i> Demo Orders</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="servicios">
-      <div class="container">
-        <div class="section-header text-center">
-          <span class="badge-tech">También desarrollamos a medida</span>
-          <h2>Tecnología que se adapta a <span class="gradient-text">tu operación</span></h2>
-          <p>Cuando un producto estándar no es suficiente, construimos la pieza que falta.</p>
-        </div>
-        <div class="services-grid">
-          <article class="service-card glass-card"><i class="fas fa-code"></i><h3>Desarrollo Web</h3><p>Landing pages, sitios corporativos y sistemas web enfocados en convertir y operar mejor.</p></article>
-          <article class="service-card glass-card"><i class="fas fa-network-wired"></i><h3>APIs e Integraciones</h3><p>Conectamos herramientas, pagos, CRM y sistemas para reducir trabajo manual.</p></article>
-          <article class="service-card glass-card"><i class="fas fa-comments"></i><h3>Chatbots</h3><p>Asistentes para web y canales de mensajería que informan, orientan y captan oportunidades.</p></article>
-          <article class="service-card glass-card"><i class="fas fa-brain"></i><h3>Agentes de IA</h3><p>Automatizaciones inteligentes que pueden usar herramientas y ejecutar procesos con control.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section id="modelo" class="model-section">
-      <div class="container model-grid">
-        <div class="section-header">
-          <span class="badge-tech">Propuesta a tu medida</span>
-          <h2>Primero entendemos tu negocio. <span class="gradient-text">Después cotizamos.</span></h2>
-          <p>Preferimos recomendar la solución correcta según usuarios, funciones, volumen e integraciones, en lugar de obligarte a elegir por una tabla de precios genérica.</p>
-        </div>
-        <div class="steps glass-card">
-          <article><b>01</b><div><strong>Diagnóstico</strong><span>Entendemos cómo trabajas hoy y dónde está la fricción.</span></div></article>
-          <article><b>02</b><div><strong>Demo</strong><span>Te mostramos una experiencia cercana a tu caso real.</span></div></article>
-          <article><b>03</b><div><strong>Propuesta</strong><span>Definimos implementación, servicio mensual y alcance.</span></div></article>
-          <article><b>04</b><div><strong>Puesta en marcha</strong><span>Configuramos, acompañamos y evolucionamos contigo.</span></div></article>
-        </div>
-      </div>
-    </section>
-
-    <section id="contacto">
-      <div class="container contact-container glass-card">
-        <div class="contact-text">
-          <span class="badge-tech">Hablemos de tu proyecto</span>
-          <h2>¿Qué quieres mejorar en tu negocio?</h2>
-          <p>Cuéntanos tu objetivo y te recomendamos qué solución de GL Minds tiene más sentido para ti.</p>
-          <ul>
-            <li><i class="fas fa-check"></i> Diagnóstico inicial</li>
-            <li><i class="fas fa-check"></i> Demo cuando aplique</li>
-            <li><i class="fas fa-check"></i> Propuesta según tu operación</li>
-          </ul>
-        </div>
-        <form id="demo-form" class="demo-form">
-          <label>Nombre<input required name="nombre" autocomplete="name" placeholder="Tu nombre"></label>
-          <label>Negocio<input required name="negocio" placeholder="Nombre de tu negocio"></label>
-          <label>Me interesa
-            <select required name="solucion">
-              <option value="">Selecciona una opción</option>
-              <option>GL Minds One</option>
-              <option>GL Minds Orders</option>
-              <option>GL Minds Chat</option>
-              <option>GL Minds Agent</option>
-              <option>Desarrollo a medida</option>
-            </select>
-          </label>
-          <label>WhatsApp<input required name="whatsapp" inputmode="tel" placeholder="Tu número"></label>
-          <label>¿Qué necesitas?<textarea name="necesidad" rows="4" placeholder="Cuéntanos brevemente qué quieres resolver"></textarea></label>
-          <button class="btn btn-primary btn-glow" type="submit">Solicitar información <i class="fas fa-arrow-right"></i></button>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container footer-content">
-      <div class="footer-brand"><img src="assets/images/logo-mark.svg" alt=""><strong>GL Minds</strong><span>Software que simplifica. Negocios que avanzan.</span></div>
-      <p>© 2026 GL Minds. Soluciones digitales, SaaS e Inteligencia Artificial.</p>
-    </div>
-  </footer>
-
-  <script src="main.js"></script>
-</body>
-</html>
+<body><canvas id="neural-canvas"></canvas>
+<header id="navbar"><div class="container nav-container"><a href="#inicio" class="logo"><img src="assets/images/logo-mark.svg" alt="GL Minds" class="logo-mark"><span class="logo-wordmark">GL <strong>Minds</strong></span></a><nav class="nav-links"><a href="#soluciones">Soluciones</a><a href="#demos">Demos</a><a href="#servicios">Servicios</a><a href="#contacto" class="btn btn-primary btn-sm">Hablemos</a></nav><button class="menu-toggle" aria-label="Abrir menú"><i class="fas fa-bars"></i></button></div></header>
+<main>
+<section id="inicio" class="hero"><div class="container hero-grid"><div class="hero-copy"><span class="badge-tech">Software pensado para negocios reales</span><h1>Soluciones digitales para <span class="gradient-text">hacer crecer tu negocio.</span></h1><p>Productos SaaS e inteligencia artificial para organizar operaciones, vender mejor, atender clientes y automatizar procesos.</p><div class="cta-group"><a href="#demos" class="btn btn-primary btn-glow">Probar nuestras demos <i class="fas fa-arrow-right"></i></a><a href="#contacto" class="btn btn-secondary">Cuéntanos tu reto</a></div><div class="hero-proof"><span><i class="fas fa-check"></i> Demos reales</span><span><i class="fas fa-check"></i> Soluciones escalables</span><span><i class="fas fa-check"></i> Acompañamiento cercano</span></div></div><div class="hero-panel glass-card"><span class="eyebrow">Ecosistema GL Minds</span><article><i class="far fa-calendar-check"></i><div><strong>GL Minds One</strong><small>Citas y operación</small></div><b>Demo</b></article><article><i class="fas fa-bag-shopping"></i><div><strong>GL Minds Orders</strong><small>Pedidos y producción</small></div><b>Demo</b></article><article><i class="fas fa-comments"></i><div><strong>GL Minds Chat</strong><small>Atención automatizada</small></div><b>Demo</b></article><article><i class="fas fa-brain"></i><div><strong>GL Minds Agent</strong><small>IA que ejecuta tareas</small></div><b>Demo</b></article></div></div></section>
+<section id="soluciones"><div class="container"><div class="section-header text-center"><span class="badge-tech">Nuestras soluciones</span><h2>Un ecosistema para <span class="gradient-text">operar, vender y automatizar</span></h2><p>Herramientas que resuelven problemas concretos y pueden crecer junto con tu negocio.</p></div><div class="products-grid">
+<article class="product-card glass-card featured-product"><div class="product-icon"><i class="far fa-calendar-check"></i></div><span class="product-status live"><i class="fas fa-circle"></i> Demo disponible</span><h3>GL Minds One</h3><p>Agenda, clientes, servicios, equipo y reportes en una plataforma para clínicas, spas, estéticas y profesionales.</p><div class="chips"><span>Agenda</span><span>Clientes</span><span>Reportes</span><span>Roles</span></div><div class="product-actions"><a href="https://demo.glminds.com" target="_blank" rel="noopener" class="btn btn-primary">Probar demo</a><a href="#contacto" class="text-link">Solicitar propuesta</a></div></article>
+<article class="product-card glass-card featured-product orders-card"><div class="product-icon"><i class="fas fa-bag-shopping"></i></div><span class="product-status live"><i class="fas fa-circle"></i> Demo disponible</span><h3>GL Minds Orders</h3><p>Catálogo, carrito, fechas disponibles, capacidad de producción, pedidos y panel administrativo.</p><div class="chips"><span>Pedidos</span><span>Capacidad</span><span>Producción</span><span>Panel</span></div><div class="product-actions"><a href="https://orders.glminds.com" target="_blank" rel="noopener" class="btn btn-primary">Probar demo</a><a href="#contacto" class="text-link">Quiero implementarlo</a></div></article>
+<article class="product-card glass-card featured-product"><div class="product-icon"><i class="fas fa-comments"></i></div><span class="product-status live"><i class="fas fa-circle"></i> Demo disponible</span><h3>GL Minds Chat</h3><p>Atención empresarial 24/7 para responder preguntas, presentar servicios, detectar intención y captar prospectos.</p><div class="chips"><span>Chat web</span><span>FAQs</span><span>Leads</span><span>24/7</span></div><div class="product-actions"><a href="https://chat.glminds.com" target="_blank" rel="noopener" class="btn btn-primary">Probar demo</a><a href="#contacto" class="text-link">Quiero un chatbot</a></div></article>
+<article class="product-card glass-card featured-product"><div class="product-icon"><i class="fas fa-brain"></i></div><span class="product-status live"><i class="fas fa-circle"></i> Demo disponible</span><h3>GL Minds Agent</h3><p>Agentes de IA que interpretan solicitudes, consultan herramientas, toman decisiones y ejecutan procesos.</p><div class="chips"><span>IA</span><span>Herramientas</span><span>Automatización</span><span>Acciones</span></div><div class="product-actions"><a href="https://agent.glminds.com" target="_blank" rel="noopener" class="btn btn-primary">Probar demo</a><a href="#contacto" class="text-link">Explorar un caso de uso</a></div></article>
+</div></div></section>
+<section id="demos" class="demos-section"><div class="container demo-banner glass-card"><div><span class="badge-tech">Pruébalo antes de decidir</span><h2>No te contamos lo que hacemos. <span class="gradient-text">Te lo mostramos.</span></h2><p>Prueba las cuatro experiencias y visualiza cómo podrían funcionar en tu propio negocio.</p></div><div class="demo-buttons"><a href="https://demo.glminds.com" target="_blank" class="btn btn-secondary"><i class="far fa-calendar-check"></i> One</a><a href="https://orders.glminds.com" target="_blank" class="btn btn-secondary"><i class="fas fa-bag-shopping"></i> Orders</a><a href="https://chat.glminds.com" target="_blank" class="btn btn-secondary"><i class="fas fa-comments"></i> Chat</a><a href="https://agent.glminds.com" target="_blank" class="btn btn-primary"><i class="fas fa-brain"></i> Agent</a></div></div></section>
+<section id="servicios"><div class="container"><div class="section-header text-center"><span class="badge-tech">También desarrollamos a medida</span><h2>Tecnología que se adapta a <span class="gradient-text">tu operación</span></h2></div><div class="services-grid"><article class="service-card glass-card"><i class="fas fa-code"></i><h3>Desarrollo Web</h3><p>Landing pages, sitios corporativos y sistemas enfocados en convertir y operar mejor.</p></article><article class="service-card glass-card"><i class="fas fa-network-wired"></i><h3>APIs e Integraciones</h3><p>Conectamos herramientas, pagos, CRM y sistemas para reducir trabajo manual.</p></article><article class="service-card glass-card"><i class="fas fa-comments"></i><h3>Chatbots</h3><p>Asistentes que informan, orientan y captan oportunidades.</p></article><article class="service-card glass-card"><i class="fas fa-brain"></i><h3>Agentes de IA</h3><p>Automatizaciones inteligentes que usan herramientas y ejecutan procesos con control.</p></article></div></div></section>
+<section id="modelo" class="model-section"><div class="container model-grid"><div class="section-header"><span class="badge-tech">Propuesta a tu medida</span><h2>Primero entendemos tu negocio. <span class="gradient-text">Después cotizamos.</span></h2><p>Definimos la solución según usuarios, funciones, volumen e integraciones; sin obligarte a elegir por una tabla de precios genérica.</p></div><div class="steps glass-card"><article><b>01</b><div><strong>Diagnóstico</strong><span>Detectamos la fricción.</span></div></article><article><b>02</b><div><strong>Demo</strong><span>Mostramos una experiencia cercana a tu caso.</span></div></article><article><b>03</b><div><strong>Propuesta</strong><span>Definimos implementación, mensualidad y alcance.</span></div></article><article><b>04</b><div><strong>Puesta en marcha</strong><span>Configuramos y evolucionamos contigo.</span></div></article></div></div></section>
+<section id="contacto"><div class="container contact-container glass-card"><div class="contact-text"><span class="badge-tech">Hablemos de tu proyecto</span><h2>¿Qué quieres mejorar en tu negocio?</h2><p>Cuéntanos tu objetivo y te recomendamos qué solución GL Minds tiene más sentido.</p><ul><li><i class="fas fa-check"></i> Diagnóstico inicial</li><li><i class="fas fa-check"></i> Demo</li><li><i class="fas fa-check"></i> Propuesta según tu operación</li></ul></div><form id="demo-form" class="demo-form"><label>Nombre<input required name="nombre" autocomplete="name" placeholder="Tu nombre"></label><label>Negocio<input required name="negocio" placeholder="Nombre de tu negocio"></label><label>Me interesa<select required name="solucion"><option value="">Selecciona una opción</option><option>GL Minds One</option><option>GL Minds Orders</option><option>GL Minds Chat</option><option>GL Minds Agent</option><option>Desarrollo a medida</option></select></label><label>WhatsApp<input required name="whatsapp" inputmode="tel" placeholder="Tu número"></label><label>¿Qué necesitas?<textarea name="necesidad" rows="4" placeholder="Cuéntanos brevemente qué quieres resolver"></textarea></label><button class="btn btn-primary btn-glow" type="submit">Solicitar información <i class="fas fa-arrow-right"></i></button></form></div></section>
+</main><footer><div class="container footer-content"><div class="footer-brand"><img src="assets/images/logo-mark.svg" alt=""><strong>GL Minds</strong><span>Software que simplifica. Negocios que avanzan.</span></div><p>© 2026 GL Minds. Soluciones digitales, SaaS e Inteligencia Artificial.</p></div></footer><script src="main.js"></script></body></html>
