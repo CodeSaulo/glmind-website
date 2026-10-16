@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /app/portal/
+Disallow: /app/acceso/
 
 Sitemap: https://glminds.com/sitemap.xml

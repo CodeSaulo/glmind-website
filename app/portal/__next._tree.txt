@@ -1,0 +1,4 @@
+:HL["/app/_next/static/chunks/09thyih_xk5~x.css","style"]
+:HC["/",""]
+:HL["/app/_next/static/chunks/08k8e~1e4o47s.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"portal","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"gE4N5HUjhv_l7jK7CC8SX"}
