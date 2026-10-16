@@ -3,4 +3,4 @@ Allow: /
 Disallow: /app/portal/
 Disallow: /app/acceso/
 
-Sitemap: https://glminds.com/sitemap.xml
+Sitemap: https://www.glminds.com/sitemap.xml

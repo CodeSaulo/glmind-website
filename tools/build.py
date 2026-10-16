@@ -19,7 +19,7 @@ import html, json, re
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "src"
-SITE = "https://glminds.com"
+SITE = "https://www.glminds.com"
 WA = "525517853980"
 WA_TXT = "Hola%20GL%20Minds%2C%20quiero%20cotizar%20un%20proyecto."
 
