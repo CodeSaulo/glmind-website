@@ -20,7 +20,7 @@ import html, json, re
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "src"
 SITE = "https://www.glminds.com"
-WA = "525517853980"
+WA = "525517601312"
 WA_TXT = "Hola%20GL%20Minds%2C%20quiero%20cotizar%20un%20proyecto."
 
 ICONS = {
@@ -108,7 +108,7 @@ FOOTER = f'''<footer class="site-foot">
         <li><a href="https://orders.glminds.com" rel="noopener">GL Minds Orders</a></li>
       </ul></div>
       <div><h2>Contacto</h2><ul>
-        <li><a href="https://wa.me/{WA}?text={WA_TXT}" rel="noopener">WhatsApp 55 1785 3980</a></li>
+        <li><a href="https://wa.me/{WA}?text={WA_TXT}" rel="noopener">WhatsApp 55 1760 1312</a></li>
         <li><a href="mailto:contacto@glminds.com">contacto@glminds.com</a></li>
         <li><a href="/aviso-de-privacidad/">Aviso de privacidad</a></li>
         <li><a href="/terminos/">Términos y condiciones</a></li>
@@ -122,7 +122,7 @@ FOOTER = f'''<footer class="site-foot">
 ORG = {
   "@context": "https://schema.org", "@type": "Organization", "@id": SITE + "/#org",
   "name": "GL Minds", "url": SITE + "/", "logo": SITE + "/assets/img/logo.png",
-  "email": "contacto@glminds.com", "telephone": "+52 55 1785 3980",
+  "email": "contacto@glminds.com", "telephone": "+52 55 1760 1312",
   "areaServed": "MX", "address": {"@type": "PostalAddress", "addressCountry": "MX"},
   "sameAs": [],
 }
