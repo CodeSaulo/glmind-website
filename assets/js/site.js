@@ -1,7 +1,7 @@
 // GL Minds — interacciones del sitio. Sin dependencias.
 (function () {
   "use strict";
-  var WA = "525517853980";
+  var WA = "525517601312";
 
   // Cabecera: borde al hacer scroll
   var head = document.querySelector(".site-head");
